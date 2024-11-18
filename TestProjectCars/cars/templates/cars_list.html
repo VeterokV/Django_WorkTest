@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Список автомобилей</h1>
+    {% for car in cars %}
+    <div>
+      <h2>
+          <a class="Car_List_Name" href="{% url 'car-detail' car.pk %}">
+              {{ car.make }} {{ car.carmodel }} {{ car.year }} года / Создатель поста: {{ car.id_owner }}
+          </a>
+      </h2>
+    </div>
+    {% endfor %}
+{% endblock %}

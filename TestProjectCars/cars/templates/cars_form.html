@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Добавить/Редактировать автомобиль</h1>
+    <form method="post">
+      {% csrf_token %}
+      <input type="text" name="make" value="{{ car.make }}" placeholder="Марка" required>
+      <input type="text" name="carmodel" value="{{ car.carmodel }}" placeholder="Модель" required>
+      <input type="number" name="year" value="{{ car.year }}" placeholder="Год" required>
+      <textarea name="desc" placeholder="Описание">{{ car.desc }}</textarea>
+      <button type="submit">Сохранить</button>
+    </form>
+{% endblock %}

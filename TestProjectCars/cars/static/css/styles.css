@@ -1,0 +1,66 @@
+body {
+    margin: 0px;
+}
+
+header {
+    background-color: grey;
+}
+
+.header_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 20px;
+    margin: 0px;
+}
+
+.header_main {
+    display: flex;
+    flex-direction: row;
+    padding-left: 0px;
+    margin: 0px;
+}
+
+.header_registration {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: px;
+    margin: 0px;
+}
+
+.header_main li,a {
+    margin-left: 25px;
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
+    padding: 0px 5px;
+}
+
+.header_registration li,a {
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
+    padding: 0px 5px;
+    padding-right: 20px;
+}
+
+.button {
+    padding: 1px 6px;
+    border: 1px outset buttonborder;
+    border-radius: 3px;
+    color: buttontext;
+    background-color: buttonface;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.car_detail_buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.car_detail {
+    display: flex;
+}

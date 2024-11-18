@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+     <div class="car_detail">
+        <h1>{{ car.make }} {{ car.model }} ({{ car.year }})</h1>
+        {% if car.id_owner.id == request.user.id %}
+            <div class="car_detail_buttons">
+                <a class="button" href="{% url 'car-edit' car.pk %}">Редактировать</a>
+                <form method="post" action="{% url 'car-delete' car.pk %}">
+                    {% csrf_token %}
+                    <button type="submit" class="button">Удалить автомобиль</button>
+                </form>
+            </div>
+        {% endif %}
+     </div>
+    <h2>Описание:</h2>
+    <p>{{ car.desc }}</p>
+    <h2>Добавить комментарий</h2>
+    <form method="post" action="{% url 'add-comment' car.pk %}">
+      {% csrf_token %}
+      <textarea name="content" placeholder="Введите ваш комментарий здесь" required></textarea>
+      <button type="submit">Отправить</button>
+    </form>
+    <h2>Комментарии</h2>
+    {% for comment in comments %}
+    <div>
+      <p>{{ comment.content }} - {{ comment.id_auth }}</p>
+    </div>
+    {% endfor %}
+{% endblock %}
