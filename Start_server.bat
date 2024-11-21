@@ -1,8 +1,9 @@
+
 start "" http://127.0.0.1:8000/main/
 
 cd TestProjectCars
 
-@set "VIRTUAL_ENV=F:\Igor\Any_Works\Py_progs\Django_WorkTest\.venv"
+@set "VIRTUAL_ENV=%~dp0\.venv"
 
 @set "VIRTUAL_ENV_PROMPT="
 @if NOT DEFINED VIRTUAL_ENV_PROMPT (
